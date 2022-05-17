@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\KategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [TestController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/kategoria', [KategoriaController::class, 'index']);
 
 require __DIR__.'/auth.php';

@@ -1,0 +1,54 @@
+#logo {
+    max-width: 30px;
+}
+
+.box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    grid-template: 'q q'
+    'a a'
+    'a a';
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.question {
+    grid-area: q;
+    background-color: brown;
+    color: white;
+}
+
+.answer {
+    margin: 10px;
+    grid-area: a;
+    width: 50%;
+}
+
+.good {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template: 'q'
+        'a'
+        'a'
+        'a'
+        'a';
+    }
+    .answer {
+        width: 100%;
+    }
+}
